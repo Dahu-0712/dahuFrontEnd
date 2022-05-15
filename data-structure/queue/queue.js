@@ -1,5 +1,5 @@
 // 队列：先进先出，在尾部添加新元素，在顶部移除元素
-class Queue {
+module.exports =  class Queue {
   constructor() {
     this.count = 0 // 队列长度
     this.lowestCount = 0 // 队列前端第一个元素
@@ -46,12 +46,12 @@ class Queue {
   }
 }
 
-const queue = new Queue()
-queue.enqueue('tom')
-queue.enqueue('jack')
-queue.enqueue('dahu')
+// const queue = new Queue()
+// queue.enqueue('tom')
+// queue.enqueue('jack')
+// queue.enqueue('dahu')
 
-console.log(queue)
+// console.log(queue)
 
-queue.dequeue()
-console.log(queue);
+// queue.dequeue()
+// console.log(queue);

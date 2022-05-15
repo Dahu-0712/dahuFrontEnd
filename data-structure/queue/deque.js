@@ -1,5 +1,5 @@
 // 双端队列：可以从前端和后端添加或者移除元素
-class Deque {
+module.exports = class Deque {
   constructor() {
     this.count = 0 // 队列大小
     this.lowestCount = 0 // 对头元素值
@@ -54,4 +54,3 @@ class Deque {
   }
 }
 
-const deque = new Deque()
