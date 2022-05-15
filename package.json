@@ -1,0 +1,20 @@
+{
+  "name": "dahuFrontEnd",
+  "version": "1.0.0",
+  "description": "大户的前端体系学习",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dahu-0713/dahuFrontEnd.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Dahu-0713/dahuFrontEnd/issues"
+  },
+  "homepage": "https://github.com/Dahu-0713/dahuFrontEnd#readme"
+}
