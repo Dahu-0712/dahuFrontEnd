@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>灵活背景定位</title>
+    <style>
+      /* background-position实现 */
+      .box1 {
+        width: 800px;
+        height: 500px;
+        margin-bottom: 20px;
+        background: url(../../assets/4ec2d5628535e5dd5920585774c6a7efce1b622e.jpeg)
+          no-repeat #58a;
+        background-position: right 20px bottom 10px;
+      }
+      /* background-origin实现 */
+      .box2 {
+        width: 780px;
+        height: 480px;
+        padding: 10px;
+        background: url(../../assets/4ec2d5628535e5dd5920585774c6a7efce1b622e.jpeg)
+          no-repeat #58a bottom right;
+        background-origin: content-box;
+        margin-bottom: 20px;
+        /* 规定了指定背景图片background-image 属性的原点位置的背景相对区域. */
+      }
+      .box3 {
+        width: 780px;
+        height: 480px;
+        padding: 10px;
+        background: url(../../assets/4ec2d5628535e5dd5920585774c6a7efce1b622e.jpeg)
+          no-repeat #58a;
+        background-position: calc(100% - 20px) calc(100% - 10px);
+        /* 计算图片偏移量，相对左上角偏移 */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+  </body>
+</html>

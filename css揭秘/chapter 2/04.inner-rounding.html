@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>边框内圆角</title>
+    <style>
+      .box1 {
+        background: #655;
+        padding: 0.8rem;
+        margin-bottom: 20px;
+      }
+
+      .box1 > div {
+        background: tan;
+        border-radius: 0.8rem;
+        padding: 1em;
+      }
+
+      .box2 {
+        background: tan;
+        border-radius: 0.8rem;
+        padding: 1em;
+        /* border: 10px solid #655; */
+        box-shadow: 0 0 0 0.6rem #655;
+        outline: 0.6rem solid #655;
+        /* 描边跟着圆角走，以前并不是这样的 */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box1">
+      <div>I have a nice subtle inner rounding, dont`t I look pretty</div>
+    </div>
+
+    <div class="box2">
+      I`m a sad element, because my outline doesn`t get alone with my round
+      corners :-(
+    </div>
+  </body>
+</html>
