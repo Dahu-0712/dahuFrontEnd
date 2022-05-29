@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="max-width=device-max-width, initial-scale=1.0"
+    />
+    <title>灵活背景定位</title>
+    <style>
+      /* background-position实现 */
+      .box1 {
+        background: url(http://csssecrets.io/images/code-pirate.svg) no-repeat
+          bottom right #58a;
+        background-position: right 20px bottom 10px;
+        /* 指定背景图片距离任意角的偏移量 */
+
+        max-width: 10em;
+        min-height: 5em;
+        padding: 10px;
+        color: white;
+        font: 100%/1 sans-serif;
+        margin-bottom: 20px;
+      }
+      /* background-origin实现 */
+      .box2 {
+        background: url(http://csssecrets.io/images/code-pirate.svg) no-repeat
+          bottom right #58a;
+        background-origin: content-box;
+        /* 以内容区域的边缘为准 */
+
+        /* Styling */
+        max-width: 10em;
+        min-height: 5em;
+        padding: 30px;
+        color: white;
+        font: 100%/1 sans-serif;
+        margin-bottom: 20px;
+      }
+      /* calc方案 */
+      .box3 {
+        background: url(http://csssecrets.io/images/code-pirate.svg) no-repeat
+          bottom right #58a;
+        background-position: calc(100% - 20px) calc(100% - 10px);
+
+        /* Styling */
+        max-width: 10em;
+        min-height: 5em;
+        padding: 10px;
+        color: white;
+        font: 100%/1 sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box1">code piate</div>
+    <div class="box2">code piate</div>
+    <div class="box3">code piate</div>
+  </body>
+</html>

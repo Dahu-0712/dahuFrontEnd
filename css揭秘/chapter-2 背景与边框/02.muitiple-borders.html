@@ -3,7 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="max-white=device-max-white, initial-scale=1.0"
+    />
     <title>多重边框</title>
     <style>
       /* boxshadow实现方式 */
@@ -12,9 +15,10 @@
         height: 200px;
         background: yellowgreen;
         box-shadow: 0 0 0 10px #655 inset, 0 0 0 15px deeppink;
-        /*可设置多个阴影， 参数L：X轴偏移量、Y轴偏移量、模糊半径、扩散半径和颜色 */
+        /* 可设置多个阴影， 参数L：X轴偏移量、Y轴偏移量、模糊半径、扩散半径和颜色 */
         /* 如果没有指定inset，默认阴影在边框外，即阴影向外扩散。使用 inset 关键字会使得阴影落在盒子内部，这样看起来就像是内容被压低了。 此时阴影会在边框之内 (即使是透明边框）、背景之上、内容之下。*/
       }
+
       /* outline： 只能实现双重边框，boxshadow可以多重 */
       .box2 {
         width: 200px;
@@ -35,7 +39,7 @@
       }
     </style>
   </head>
-  <body style="display: flex; justify-content: space-around;">
+  <body style="display: flex; justify-content: space-around">
     <div class="box1"></div>
     <div class="box2"></div>
     <div class="box3"></div>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>染色效果</title>
+  <style>
+    .img2 {
+      filter:sepia(1)
+      /* 给图片增加一种降饱和度的橙黄色染色效果，所有像素的色值都会收敛到35～40区间 */
+    }
+    .img3 {
+      filter: sepia(1) saturate(4);
+      /* saturate()给每个像素提升饱和度 */
+    }
+    .img4 {
+      filter: sepia(1) saturate(4) hue-rotate(295deg);
+    }
+    /* hue-rotate() 把每个像素的色相以指定的度数进行偏移，把原有的色相值40变为335需要增加295度 */
+    /* TODO: transition加入filter什么意思？ */
+    .img5 {
+      transition: .5s filter;
+      filter: sepia(1) saturate(4) hue-rotate(295deg);
+    }
+    .img5:hover,
+    .img5:focus {
+      filter: none;
+    }
+  </style>
+</head>
+<body>
+  <img class="img1" src="http://csssecrets.io/images/tiger.jpg" />
+  <img class="img2" src="http://csssecrets.io/images/tiger.jpg" />
+  <img class="img3" src="http://csssecrets.io/images/tiger.jpg" />
+  <img class="img4" src="http://csssecrets.io/images/tiger.jpg" />
+  <img class="img5" src="http://csssecrets.io/images/tiger.jpg" />
+</body>
+</html>

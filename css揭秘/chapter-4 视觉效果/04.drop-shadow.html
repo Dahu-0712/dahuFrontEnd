@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>不规则投影</title>
+    <style>
+      div {
+        position: relative;
+        display: inline-flex;
+        flex-direction: column;
+        justify-content: center;
+        vertical-align: bottom;
+        box-sizing: border-box;
+        width: 20em;
+        height: 25em;
+        margin: 0.6em;
+        background: #fb3;
+        /* box-shadow: .1em .1em .3em rgba(0,0,0,.5); */
+        filter: drop-shadow(.1em .1em .1em rgba(0,0,0,.5));
+        -webkit-filter: drop-shadow(.1em .1em .1em rgba(0,0,0,.5));
+        /* 任何非透明的部分都会被打上投影，包括文本，例子2就是，无法通过text-shadow去掉 */
+        text-align: center;
+      }
+      .speech {
+        border-radius: 0.3em;
+      }
+      .speech::before {
+        content: '';
+        position: absolute;
+        top: 1em;
+        right: -0.7em;
+        width: 0;
+        height: 0;
+        border: 1em solid transparent;
+        border-left-color: #fb3;
+        border-right-width: 0;
+      }
+      .dotted {
+        background: transparent;
+        border: 1em dashed #fb3;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="speech">Speech bubble</div>
+    <div class="dotted">Dotted border</div>
+  </body>
+</html>

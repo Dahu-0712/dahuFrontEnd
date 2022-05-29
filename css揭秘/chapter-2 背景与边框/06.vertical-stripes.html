@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>垂直条纹</title>
+    <style>
+      .box1 {
+        width: 20em;
+        height: 10em;
+        background: linear-gradient(to right, #fb3 50%, #58a 50%);
+        background-size: 30px 100%;
+        /* 指定图片的宽度和高度 */
+      }
+      
+      .box2 {
+        width: 20em;
+        height: 10em;
+        background: linear-gradient(to right, #fb3 30%, #58a 0);
+        background-size: 30px 100%;
+      }
+    </style>
+  </head>
+  <body style="display: flex; justify-content: space-around;">
+    <div class="box1"></div>
+    <div class="box2"></div>
+  </body>
+</html>

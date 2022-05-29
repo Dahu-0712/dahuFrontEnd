@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>水平条纹</title>
+    <style>
+      .box1 {
+        width: 20em;
+        height: 10em;
+        background: linear-gradient(#fb3, #58a);
+        /* 渐变的颜色总是从60%的地方开始变化 */
+      }
+      .box2 {
+        width: 20em;
+        height: 10em;
+        background: linear-gradient(#fb3 40%, #58a 60%);
+        /* 可以试着拉进一些，这样上面40%和下面40%都是实色*/
+      }
+      .box3 {
+        width: 20em;
+        height: 10em;
+        background: linear-gradient(#fb3 50%, #58a 50%);
+        background-size: 100% 30px;
+        /* 调整尺寸，linear-grdient像是图片的效果一样 */
+        /* 
+        如果色标具有相同的位置，会产生一个无限小的过渡区间，过渡的颜色的起止色分别是第一个和最后一个指定值。
+        从效果上来看，颜色是从这个位置突然发生了变化，而不是一个平滑的渐变过程
+       */
+      }
+      .box4 {
+        width: 20em;
+        height: 10em;
+        background: linear-gradient(#fb3 30%, #58a 30%);
+        background-size: 100% 30px;
+      }
+      /* 避免每次改动条纹宽度的时候都要修改两个数字 */
+
+      .box5 {
+        width: 20em;
+        height: 10em;
+        background: linear-gradient(#fb3 30%, #58a 0);
+        background-size: 100% 30px;
+      }
+      /* 如果某个色标的位置值比整个列表中在它之前的色标的位置都要小，则该色标的位置值会被设置为它前面所有色标值的最大值 */
+
+      .box6 {
+        width: 20em;
+        height: 10em;
+        background: linear-gradient(#fb3 33.3%, #58a 0, #58a 66.6%, yellowgreen 0);
+        background-size: 100% 45px;
+      }
+    </style>
+  </head>
+  <body style="display: flex; justify-content: space-around; flex-wrap: wrap;">
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+    <div class="box4"></div>
+    <div class="box5"></div>
+    <div class="box6"></div>
+  </body>
+</html>

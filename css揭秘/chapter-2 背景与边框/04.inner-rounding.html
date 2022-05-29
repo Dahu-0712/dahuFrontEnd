@@ -8,8 +8,9 @@
     <style>
       .box1 {
         background: #655;
-        padding: 0.8rem;
-        margin-bottom: 20px;
+        padding: 0.8em;
+        max-width: 10em;
+        margin: 1em;
       }
 
       .box1 > div {
@@ -19,24 +20,26 @@
       }
 
       .box2 {
-        background: tan;
-        border-radius: 0.8rem;
-        padding: 1em;
-        /* border: 10px solid #655; */
-        box-shadow: 0 0 0 0.6rem #655;
-        outline: 0.6rem solid #655;
+        outline: 0.6em solid #655;
+        box-shadow: 0 0 0 0.4em #655; /* todo calculate max of this */
         /* 描边跟着圆角走，以前并不是这样的 */
+
+        max-width: 10em;
+        border-radius: 0.8em;
+        padding: 1em;
+        margin: 1em;
+        background: tan;
+        font: 100%/1.5 sans-serif;
       }
     </style>
   </head>
   <body>
     <div class="box1">
-      <div>I have a nice subtle inner rounding, dont`t I look pretty</div>
+      <div>I have a nice subtle inner rounding, don’t I look pretty?</div>
     </div>
 
     <div class="box2">
-      I`m a sad element, because my outline doesn`t get alone with my round
-      corners :-(
+      I have a nice subtle inner rounding, don’t I look pretty?
     </div>
   </body>
 </html>

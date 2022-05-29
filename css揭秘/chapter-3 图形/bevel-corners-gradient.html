@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>切角效果</title>
+    <style>
+      .box1 {
+        background: #58a;
+        background: linear-gradient(-45deg, transparent 15px, #58a 0);
+        /* 渐变可以接受一个角度作为方向 */
+
+        padding: 1em 1.2em;
+        max-width: 12em;
+        color: white;
+        font: 150%/1.6 Baskerville, Palatino, serif;
+      }
+
+      .box2 {
+        background: #58a;
+        background: 
+          linear-gradient(-45deg, transparent 15px, #58a 0),
+          linear-gradient(45deg, transparent 15px, #655 0);
+
+        padding: 1em 1.2em;
+        max-width: 12em;
+        color: white;
+        font: 150%/1.6 Baskerville, Palatino, serif;
+      }
+      /* 两层渐变会相互覆盖，需要缩小让每层渐变分别站整个元素一般的面积 */
+
+      .box3 {
+        background: #58a;
+        background: 
+          linear-gradient(-45deg, transparent 15px, #58a 0) right,
+          linear-gradient(45deg, transparent 15px, #58a 0) left;
+        background-size: 50% 100%; 
+        /* 设置宽高 */
+        background-repeat: no-repeat;
+        padding: 1em 1.2em;
+        max-width: 12em;
+        color: white;
+        font: 150%/1.6 Baskerville, Palatino, serif;
+      }
+      .box4 {
+        background-color: #58a;
+        background: 
+          linear-gradient(135deg, transparent 15px, #58a 0) top left,
+	        linear-gradient(-135deg, transparent 15px, #58a 0) top right,
+	        linear-gradient(-45deg, transparent 15px, #58a 0) bottom right,
+	        linear-gradient(45deg, transparent 15px, #58a 0) bottom left;
+        background-size: 50% 50%;
+        background-repeat: no-repeat;
+        padding: 1em 1.2rem;
+        max-width: 12em;
+        color: white;
+        font: 150%/1.6  Baskerville, Palatino, serif;
+      }
+    </style>
+  </head>
+  <body style="display: flex; justify-content: space-around;">
+    <div class="box1">
+      Hey, focus! You’re supposed to be looking at my corners, not reading my
+      text. The text is just placeholder!
+    </div>
+    <div class="box2">
+      Hey, focus! You’re supposed to be looking at my corners, not reading my
+      text. The text is just placeholder!
+    </div>
+    <div class="box3">
+      Hey, focus! You’re supposed to be looking at my corners, not reading my
+      text. The text is just placeholder!
+    </div>
+    <div class="box4">
+      Hey, focus! You’re supposed to be looking at my corners, not reading my
+      text. The text is just placeholder!
+    </div>
+  </body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>单侧投影</title>
+    <style>
+      .box1 {
+        width: 400px;
+        height: 300px;
+        background-color: rgb(229, 131, 11);
+        box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.5);
+        /* x轴偏移量， y轴偏移量，模糊半径，颜色 */
+        /*  
+          实现步骤：
+          1.参照该元素的尺寸和位置，画一个rgba(0, 0, 0, 0.5)的矩形
+          2.向右移动2px，向下移动3px
+          3.使用高斯模糊算法，进行4px的模糊处理。
+          4.模糊后的矩形与原始元素的交集部分会被切掉。
+        */
+        /* 
+          使用4px的模糊半径意味着投影的尺寸会比元素本身的尺寸大约8px，会在元素的四面向外显露，通过偏移量来隐藏
+          从某种程度上来说，这加重了显露出来的投影浓重
+        */
+      }
+      .box2 {
+        width: 400px;
+        height: 300px;
+        background-color: coral;
+        box-shadow: 0 6px 4px -4px rgba(0, 0, 0, 0.5);
+        /* x轴偏移量， y轴偏移量，模糊半径，扩张半径，颜色 */
+        /* 添加一个负的扩张半径 */
+      }
+    </style>
+  </head>
+  <body style="display: flex; justify-content: space-around;">
+    <div class="box1"></div>
+    <div class="box2"></div>
+  </body>
+</html>

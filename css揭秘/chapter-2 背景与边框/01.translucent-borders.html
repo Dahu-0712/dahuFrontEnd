@@ -6,28 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>半透明边框</title>
     <style>
-      .parentBox {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 200px;
-        height: 200px;
-        background-color: black;
+      body {
+        background: url('http://csssecrets.io/images/stone-art.jpg');
       }
-      .childBox {
-        width: 48px;
-        height: 48px;
+      .box {
         border: 10px solid hsla(0, 0%, 100%, 0.5);
         background: white;
         background-clip: padding-box;
-      }
+        /* 设置元素的背景（背景图片或颜色）是否延伸到边框、内边距盒子、内容盒子下面 */
+        /* 默认border-box，会裁掉边框的外延框 */
 
-      .box {
-        width: 200px;
-        height: 200px;
-        border: 10px dashed tan;
-        background: yellowgreen;
-        /* 默认情况下背景会延伸到边框所在的区域下层 */
+        max-width: 20em;
+        padding: 2em;
+        margin: 2em auto 0;
+        font: 100%/1.5 sans-serif;
       }
     </style>
   </head>
@@ -36,6 +28,6 @@
       <div class="childBox"></div>
     </div>
 
-    <div class="box"></div>
+    <div class="box">Can I haz semi-transparent borders? Pretty please?</div>
   </body>
 </html>

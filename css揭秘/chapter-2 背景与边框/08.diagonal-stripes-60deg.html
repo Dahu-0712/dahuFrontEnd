@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>60度倾斜的条纹</title>
+    <style>
+      /* 循环linear-gradients */
+      .box1 {
+        width: 20em;
+        height: 10em;
+        background: repeating-linear-gradient(to right, #fb3 0 15px, #58a 0 30px);
+      }
+      .box2 {
+        width: 20em;
+        height: 10em;
+        background: repeating-linear-gradient(45deg, #fb3 0 15px, #58a 0 30px);
+      }
+      .box3 {
+        width: 20em;
+        height: 10em;
+        background: repeating-linear-gradient(60deg, #fb3 0 15px, #58a 0 30px);
+      }
+      .box4 {
+        width: 20em;
+        height: 10em;
+        background: repeating-linear-gradient(30deg, #fb3 0 15px, #58a 0 30px);
+      }
+    </style>
+  </head>
+  <body style="display: flex; justify-content: space-around;">
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+    <div class="box4"></div>
+  </body>
+</html>
