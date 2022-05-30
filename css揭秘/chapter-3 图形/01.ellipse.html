@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>自适应的椭圆</title>
+    <style>
+      .box1 {
+        background: #fb3;
+        width: 200px;
+        height: 200px;
+        border-radius: 100px;
+        /* 给元素设置固定宽高以及一半长度的border-radius可以得到一个圆形 */
+      }
+      .box2 {
+        width: 16em;
+        height: 10em;
+        background: #fb3;
+        border-radius: 50%;
+        /* 可以接受一个百分比值，百分比值会基于元素尺寸进行解析 */
+      }
+      .box3 {
+        width: 400px;
+        height: 200px;
+        background: #fb3;
+        border-radius: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+  </body>
+</html>
