@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>裁剪路径方案</title>
+    <style>
+      img {
+        max-width: 250px;
+        margin: 20px;
+        -webkit-clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+        clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+        transition: 1s;
+        /* clip-path CSS 属性使用裁剪方式创建元素的可显示区域。 */
+        /* polygon()函数指定一个菱形 */
+      }
+      img:hover {
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+      }
+    </style>
+  </head>
+  <body>
+    <img src="http://csssecrets.io/images/adamcatlace.jpg" />
+    <img src="http://csssecrets.io/images/adam-sleeping.jpg" />
+  </body>
+</html>

@@ -17,10 +17,17 @@
         width: 16em;
         height: 10em;
         background: #fb3;
-        border-radius: 50%;
-        /* 可以接受一个百分比值，百分比值会基于元素尺寸进行解析 */
+        border-radius: 100px / 75px;
+        /* border-radius可以单独指定水平和垂直半径，因此可以在拐角处创建椭圆圆角 */
       }
       .box3 {
+        width: 16em;
+        height: 10em;
+        background: #fb3;
+        border-radius: 50%;
+        /* 可以接受一个百分比值，百分比值会基于元素尺寸进行解析，相同的百分比可能计算出不同的水平和垂直半径 */
+      }
+      .box4 {
         width: 400px;
         height: 200px;
         background: #fb3;
@@ -32,5 +39,6 @@
     <div class="box1"></div>
     <div class="box2"></div>
     <div class="box3"></div>
+    <div class="box4"></div>
   </body>
 </html>

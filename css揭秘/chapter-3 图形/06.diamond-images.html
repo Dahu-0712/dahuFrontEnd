@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>菱形</title>
+    <style>
+      .picture {
+        width: 400px;
+        margin: 100px;
+        transform: rotate(45deg);
+        overflow: hidden;
+      }
+      .picture > img {
+        max-width: 100%;
+        transform: rotate(-45deg) scale(1.42);
+        /* 对图片进行剪裁 */
+      }
+      
+    </style>
+  </head>
+  <body>
+    <div class="picture">
+      <img src="http://csssecrets.io/images/adamcatlace.jpg" alt="">
+    </div>
+  </body>
+</html>

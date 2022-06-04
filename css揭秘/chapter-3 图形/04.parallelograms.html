@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>平行四边形</title>
+    <style>
+      .button {
+        display: inline-block;
+        /* 如果把这个效果应用到默认显示为行内的元素，要将其display设置为inline-block 或者 block */
+        padding: 0.5em 1em;
+        border: 0;
+        margin: 0.5em;
+        background: #58a;
+        color: white;
+        text-transform: uppercase;
+        text-decoration: none;
+        font: bold 200%/1 sans-serif;
+      }
+      .button {
+        transform: skew(-45deg);
+        /* skew() 函数定义了一个元素在二维平面上的倾斜转换。 */
+      }
+      .button > div {
+        transform: skew(45deg);
+        /* 对内容器应用一次反响的skew()变形，抵消容器的变形效果 */
+      }
+    </style>
+  </head>
+  <body>
+    <a href="#yolo" class="button">
+      <div>Click me</div>
+    </a>
+    <div class="button">
+      <div>Click me</div>
+    </div>
+  </body>
+</html>
