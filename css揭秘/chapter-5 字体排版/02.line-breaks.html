@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>插入换行</title>
+    <style>
+      dt,
+      dd {
+        display: inline;
+        margin: 0;
+      }
+      dd {
+        font-weight: 600;
+      }
+      /* dd::after {
+        content: '\A';
+        white-space: pre;
+      } */
+      dd + dt::before {
+        content: '\A';
+        /* 相当于在所有</dt>之前添加了换行符。默认情况下这些换行符会与其他相邻的空白换行符合并 */
+        /* 但现在我们需要保留这些空白符和换行 */
+        white-space: pre;
+        /* white-space CSS 属性是用来设置如何处理元素中的 空白 (en-US)。 */
+        /* white-space: pre: 连续的空白符会被保留。在遇到换行符或者<br>元素时才会换行。b */
+      }
+      /* 紧跟着dd后面的dt元素 */
+
+      dd + dd::before {
+        content: ', ';
+        font-weight: normal;
+        margin-left: -0.25em;
+      }
+
+      body {
+        font: 150%/1.6 Baskerville, Palatino, serif;
+      }
+    </style>
+  </head>
+  <body>
+    <dl>
+      <dt>Name:</dt>
+      <dd>Lea Verou</dd>
+
+      <dt>Email:</dt>
+      <dd>lea@verou.me</dd>
+      <dd>leaverou@mit.edu</dd>
+
+      <dt>Location:</dt>
+      <dd>Earth</dd>
+    </dl>
+  </body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>凸版印刷效果</title>
+    <style>
+      /* 出现在 底部的浅色投影 或者 出现在顶部的暗色投影 会让人产生物体是 凹 进平面内的错觉 */
+      /* 出现在 底部的暗色投影 或者 出现在顶部的浅色投影 会让人产生物体是 凸 进平面内的错觉 */
+      p {
+        padding: 0.8em 1em;
+        background: hsl(210, 13%, 60%);
+        color: hsl(210, 13%, 30%);
+        text-shadow: 0 1px 1px hsla(0, 0%, 100%, 0.8);
+        /* 但我们在浅色背景上使用深色文字，在底部加上浅色投影通常效果最佳 */
+      }
+
+      p + p {
+        background: hsl(210, 13%, 30%);
+        color: hsl(210, 13%, 60%);
+        text-shadow: 0 -1px 1px black;
+        /* 深色背景 浅色文字。在底部加上深色投影 */
+      }
+    </style>
+  </head>
+  <body>
+    <p>“The only way to get rid of a temp­ta­tion is to yield to it.”</p>
+    <p>“The only way to get rid of a temp­ta­tion is to yield to it.”</p>
+  </body>
+</html>
