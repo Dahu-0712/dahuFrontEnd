@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue3Proxy</title>
+  </head>
+  <body>
+    <div id="app">hello dahu</div>
+  </body>
+
+  <script>
+    let data = {
+      msg: '',
+      count: 0
+    }
+
+    let vm = new Proxy(data, {
+      get(target, key) {
+        console.log('get, key:', key, target[key])
+        return target[key]
+      },
+      set(target, key, newValue) {
+        console.log('set, key:', key, target[key])
+        if (target[key] === newValue) {
+          return
+        }
+        target[key] = newValue
+        document.querySelector('#app').textContent = target[key]
+      },
+    })
+
+    vm.msg = 'hello vue'
+    console.log(vm.msg)
+  </script>
+</html>
