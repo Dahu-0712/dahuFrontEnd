@@ -29,5 +29,17 @@
         },
       })
     </script>
+
+    <!-- 
+      打印vm
+      Vue {_uid: 0, _isVue: true, $options: {…}, _renderProxy: Proxy, _self: Vue, …}
+      count: (...)
+      msg: (...)
+      get count: ƒ proxyGetter()
+      set count: ƒ proxySetter(val)
+      get msg: ƒ proxyGetter()
+      set msg: ƒ proxySetter(val)
+    -->
+    <!-- Vue会把data中的成员注入到vue实例上，这样就可以通过this来访问 -->
   </body>
 </html>
