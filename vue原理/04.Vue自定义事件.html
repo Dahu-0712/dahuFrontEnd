@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue自定义事件</title>
+  </head>
+  <body></body>
+
+  <script src="./js/vue.js"></script>
+  <script>
+    let vm = new Vue()
+    // { 'click': [fn1, fn2], 'change': [fn] }
+
+    // 注册事件（订阅消息）
+    // 可以注册多个事件，也可以给多个事件注册相同的处理方式
+    vm.$on('dataChange', () => {
+      console.log('dataChange')
+    })
+
+    vm.$on('dataChange', () => {
+      console.log('dataChange2')
+    })
+
+    console.log(vm)
+    // 实际打印出来
+    // events:
+    // dataChange: Array(2)
+    // 0: () => { console.log('dataChange') }
+    // 1: () => { console.log('dataChange2') }
+
+    // 触发事件
+    vm.$emit('dataChange')
+  </script>
+</html>

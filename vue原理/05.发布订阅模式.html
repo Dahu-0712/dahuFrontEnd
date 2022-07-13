@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>发布订阅模式</title>
+  </head>
+  <body></body>
+  <script>
+    // 事件触发器
+    class EventEmitter {
+      constructor() {
+        // { 'click': [fn1, fn2], 'change': [fn] }
+        this.subs = Object.create(null)
+      }
+
+      // 注册事件
+      $on(eventType, handler) {
+        this.subs[eventType] = this.subs[eventType] || []
+        this.subs[eventType].push(handler)
+      }
+
+      // 触发事件
+      $emit(eventType) {
+        if (this.subs[eventType]) {
+          this.subs[eventType].forEach((handler) => {
+            handler()
+          })
+        }
+      }
+    }
+
+    let em = new EventEmitter()
+    em.$on('dataChange', () => {
+      console.log('dataChange1')
+    })
+    em.$on('dataChange', () => {
+      console.log('dataChange2')
+    })
+    em.$emit('dataChange')
+  </script>
+</html>
