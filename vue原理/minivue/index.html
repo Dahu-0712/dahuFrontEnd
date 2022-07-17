@@ -5,12 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <script src="./js/compiler.js"></script>
     <script src="./js/observer.js"></script>
     <script src="./js/vue.js"></script>
   </head>
 
   <body>
-    <div id="app">{{msg}}</div>
+    <div id="app">
+      <h1>差值表达式</h1>
+      <h3>{{ msg }}</h3>
+      <h3>{{ count }}</h3>
+      <h1>v-text</h1>
+      <div v-text="msg"></div>
+      <h1>v-model</h1>
+      <input type="text" v-model="msg" />
+      <input type="text" v-model="count" />
+    </div>
     <script>
       let vm = new Vue({
         el: '#app',
@@ -23,7 +33,7 @@
           },
         },
       })
-      vm.msg = { text: 'Hello dahu' }
+      // vm.msg = { text: 'Hello dahu' }
       console.log(vm)
     </script>
   </body>

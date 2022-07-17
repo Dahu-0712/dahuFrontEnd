@@ -12,6 +12,7 @@ class Vue {
     // 3.调用observe对象，监听数据的变化
     new Observer(this.$data)
     // 4.调用compiler对象，解析指令和插值表达式
+    new Compiler(this)
   }
 
   // 遍历data中的所有属性，把data的属性注入到vue实例中
