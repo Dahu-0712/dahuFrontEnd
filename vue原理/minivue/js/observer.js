@@ -17,7 +17,11 @@ class Observer {
   }
   // 当访问data属性时做一些干预
   defineReactive(data, key, val) {
-    let that = this // set内部this指向问题
+    // set内部this指向问题
+    let that = this
+    // 收集依赖，发送通知
+    let dep = new Dep()
+
     // 如果val是一个对象，需要将val内部的属性也转换成响应式的对象
     // 需要再次调用this.walk
     this.walk(val)
@@ -25,6 +29,8 @@ class Observer {
       enumerable: true,
       configurable: true,
       get() {
+        // 收集依赖
+        Dep.target && dep.addSub(Dep.target)
         return val
       },
       set(newValue) {
@@ -34,7 +40,7 @@ class Observer {
         val = newValue
         // 如果重新复制时是一个对象时，也需要转换成响应式
         that.walk(newValue)
-        // TODO:发生变化发送通知
+        dep.notify
       },
     })
   }
