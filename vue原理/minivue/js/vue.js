@@ -27,7 +27,7 @@ class Vue {
           if (data[key] === newValue) {
             return
           }
-          data[key] === newValue
+          data[key] = newValue
         },
       })
     })
