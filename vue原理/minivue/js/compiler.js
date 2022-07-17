@@ -46,17 +46,30 @@ class Compiler {
   update(node, key, attrName) {
     // node节点， key属性，attrName 指令名称
     let updaterFn = this[attrName + 'Updater']
-    updaterFn && updaterFn(node, this.vm[key])
+    updaterFn && updaterFn.call(this, node, this.vm[key], key)
   }
 
   // 处理v-text属性
-  textUpdater(node, value) {
+  textUpdater(node, value, key) {
     node.textContent = value
+
+    new Watcher(this.vm, key, (newValue) => {
+      node.textContent = newValue
+    })
   }
 
   // 处理v-model属性
-  modelUpdater(node, value) {
+  modelUpdater(node, value, key) {
     node.value = value
+
+    new Watcher(this.vm, key, (newValue) => {
+      node.value = newValue
+    })
+
+    // 双向绑定
+    node.addEventListener('input', () => {
+      this.vm[key] = node.value
+    })
   }
 
   // 编译文本节点，处理插值表达式
@@ -68,6 +81,12 @@ class Compiler {
     if (reg.test(value)) {
       let key = RegExp.$1.trim()
       node.textContent = value.replace(reg, this.vm[key])
+
+      // 每一个指令创建一个watcher，观察数据的变化
+      new Watcher(this.vm, key, (newValue) => {
+        console.log(newValue)
+        node.textContent = newValue
+      })
     }
   }
 

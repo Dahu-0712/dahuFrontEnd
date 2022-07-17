@@ -40,7 +40,7 @@ class Observer {
         val = newValue
         // 如果重新复制时是一个对象时，也需要转换成响应式
         that.walk(newValue)
-        dep.notify
+        dep.notify()
       },
     })
   }
