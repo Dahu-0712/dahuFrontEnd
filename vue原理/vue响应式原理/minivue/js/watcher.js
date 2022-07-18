@@ -13,6 +13,7 @@ class Watcher {
     Dep.target = null
   }
 
+  // 当数据发生变化时更新试图
   update() {
     const newValue = this.vm[this.key]
     if ((newValue === this.oldValue)) {
